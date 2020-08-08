@@ -44,10 +44,6 @@ function draw() {
   rectMode(CENTER);
   background(0);
 
-  //if(keyPressed(UP_ARROW)){
-	  
- // }
-
   ground.display();
   bob1.display();
   bob2.display();
@@ -62,7 +58,12 @@ function draw() {
   rope5.display();
 
   drawSprites();
+  
  
 }
 
-
+function keyPressed(){
+	if(keyCode === UP_ARROW){
+	Matter.Body.applyForce(bob1.body,bob1.body.position,{x:-50,y:-45});
+	}
+}
